@@ -1,0 +1,106 @@
+﻿@using System.Security.Claims
+@using Domain.AspNet
+
+<link href="~/assets/vendors/general/sweetalert2/dist/sweetalert2.css" rel="stylesheet" type="text/css" />
+
+<style>
+</style>
+<div id="k_header" class="k-header k-grid__item  k-header--fixed ">
+
+    <!-- begin: Header Menu -->
+    <button class="k-header-menu-wrapper-close" id="k_header_menu_mobile_close_btn"><i class="la la-close"></i></button>
+    <div class="k-header__brand-logo" style="margin-left:25px; margin-top:5px">
+        <a class="k-hidden-tablet-and-mobile" href="@Url.Action("Index","Home")">
+           
+
+        </a>
+    </div>
+    <!--No borrar, se necesita dejar puesto para que no se recorran los iconos de la parte derecha del header.-->
+    <div class="k-header-menu-wrapper" id="k_header_menu_wrapper">
+        <div id="k_header_menu" class="k-header-menu k-header-menu-mobile ">
+        </div>
+    </div>
+
+    <!-- end: Header Menu -->
+    <!-- begin:: Header Topbar -->
+    <div class="k-header__topbar ">
+        <div class="k-visible-tablet-and-mobile" style="margin-top:5px;">
+            <a href="@Url.Action("Index","Home")">
+               
+
+            </a>
+        </div>
+
+        <!--begin: User bar -->
+        <div class="k-header__topbar-item k-header__topbar-item--user">
+            <div class="k-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px -2px">
+                <div class="k-header__topbar-user">
+                    <span class="k-header__topbar-welcome k-hidden-mobile">Bienvenido</span>
+                    <span class="k-header__topbar-username k-hidden-mobile">@User.Identity.Name</span>
+                    <img alt="Pic" src="~/assets/media/users/default.jpg" />
+                    <!--use below badge element instead the user avatar to display username's first letter(remove k-hidden class to display it) -->
+                    <span class="k-badge k-badge--username k-badge--lg k-badge--brand k-hidden">A</span>
+                </div>
+            </div>
+            <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-md">
+                <div class="k-user-card k-margin-b-50 k-margin-b-30-tablet-and-mobile" style="background-image: url(../assets/media/misc/head_bg_sm.jpg)">
+                    <div class="k-user-card__wrapper">
+                        <div class="k-user-card__pic">
+                            <img alt="Pic" src="~/assets/media/users/default.jpg" />
+                        </div>
+                        <div class="k-user-card__details">
+                            @*<div class="k-user-card__name jemplo"> <span>@User.Identity.Name</span> </div>*@
+                            <div class="k-user-card__position" style="padding: 0.2rem;height: 30%;color:aliceblue;">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @*<div class="k-user-card__name"> <p class="text-center">@User.Identity.Name</p> </div>*@
+
+                <ul class="k-nav k-margin-b-10">
+                   
+                        <li class="k-nav__item">
+                            <a asp-action="ChangePassword" asp-controller="Home" class="k-nav__link">
+                                <span class="k-nav__link-icon"><i class="flaticon2-gear"></i></span>
+                                <span class="k-nav__link-text">Cambiar contraseña</span>
+                            </a>
+                        </li>
+                        <li class="k-nav__item">
+                            <a asp-action="Logout" asp-controller="Account" class="k-nav__link">
+                                <span class="k-nav__link-icon"><i class="fa fa-sign-out-alt"></i></span>
+                                <span class="k-nav__link-text">Cerrar Sesión</span>
+                            </a>
+                        </li>
+                    
+                    
+
+                    @*<li class="k-nav__item k-nav__item--custom k-margin-t-15">
+                            <a asp-action="ChangePassword" asp-controller="ApplicationUsers" class="btn btn-outline-metal btn-hover-brand btn-upper btn-font-dark btn-sm btn-bold">Cambiar contraseña</a>
+                        </li>
+                        <li class="k-nav__item k-nav__item--custom k-margin-t-15">
+                            <a asp-action="Logout" asp-controller="Account" class="btn btn-outline-metal btn-hover-brand btn-upper btn-font-dark btn-sm btn-bold">Cerrar Sesión</a>
+                        </li>*@
+                </ul>
+            </div>
+        </div>
+
+        <!--end: User bar -->
+        <!--begin: Quick panel toggler -->
+        @*<div class="k-header__topbar-item k-header__topbar-item--quick-panel" data-toggle="k-tooltip" title="Quick panel" data-placement="right">
+                <span class="k-header__topbar-icon" id="k_quick_panel_toggler_btn">
+                    <i class="flaticon2-grids"></i>
+                </span>
+            </div>*@
+
+        <!--end: Quick panel toggler -->
+    </div>
+
+    <!-- end:: Header Topbar -->
+</div>
+<script src="~/assets/vendors/general/block-ui/jquery.blockUI.js" type="text/javascript"></script>
+
+<script src="~/assets/vendors/general/sweetalert2/dist/sweetalert2.min.js" type="text/javascript"></script>
+<script src="~/assets/vendors/custom/theme/framework/vendors/sweetalert2/init.js" type="text/javascript"></script>
+<script src="~/assets/demo/default/custom/components/extended/sweetalert2.js" type="text/javascript"></script>
+

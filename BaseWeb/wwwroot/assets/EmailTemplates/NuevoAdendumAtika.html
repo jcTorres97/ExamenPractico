@@ -1,0 +1,1029 @@
+﻿<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Oxygen Reignite</title>
+
+    <style type="text/css">
+        /* Take care of image borders and formatting, client hacks */
+        img {
+            max-width: 600px;
+            outline: none;
+            text-decoration: none;
+            -ms-interpolation-mode: bicubic;
+        }
+
+        a img {
+            border: none;
+        }
+
+        table {
+            border-collapse: collapse !important;
+        }
+
+        #outlook a {
+            padding: 0;
+        }
+
+        .ReadMsgBody {
+            width: 100%;
+        }
+
+        .ExternalClass {
+            width: 100%;
+        }
+
+        .backgroundTable {
+            margin: 0 auto;
+            padding: 0;
+            width: 100% !important;
+        }
+
+        table td {
+            border-collapse: collapse;
+        }
+
+        .ExternalClass * {
+            line-height: 115%;
+        }
+
+        .container-for-gmail-android {
+            min-width: 600px;
+        }
+
+
+        /* General styling */
+        * {
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-size-adjust: none;
+            width: 100% !important;
+            margin: 0 !important;
+            height: 100%;
+            color: #676767;
+        }
+
+        td {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #777777;
+            text-align: center;
+            line-height: 21px;
+        }
+
+        a {
+            color: #676767;
+            text-decoration: none !important;
+        }
+
+        .pull-left {
+            text-align: left;
+        }
+
+        .pull-right {
+            text-align: right;
+        }
+
+        .header-lg,
+        .header-md,
+        .header-sm {
+            font-size: 32px;
+            font-weight: 700;
+            line-height: normal;
+            padding: 35px 0 0;
+            color: #4d4d4d;
+        }
+
+        .header-md {
+            font-size: 24px;
+        }
+
+        .header-sm {
+            padding: 5px 0;
+            font-size: 18px;
+            line-height: 1.3;
+        }
+
+        .content-padding {
+            padding: 20px 0 30px;
+        }
+
+        .mobile-header-padding-right {
+            width: 290px;
+            text-align: right;
+            padding-left: 10px;
+        }
+
+        .mobile-header-padding-left {
+            width: 290px;
+            text-align: left;
+            padding-left: 10px;
+        }
+
+        .free-text {
+            width: 100% !important;
+            padding: 10px 60px 0px;
+        }
+
+        .block-rounded {
+            border-radius: 5px;
+            border: 1px solid #e5e5e5;
+            vertical-align: top;
+        }
+
+        .button {
+            padding: 55px 0 0;
+        }
+
+        .info-block {
+            padding: 0 20px;
+            width: 260px;
+        }
+
+        .mini-block-container {
+            padding: 30px 50px;
+            width: 500px;
+        }
+
+        .mini-block {
+            background-color: #ffffff;
+            width: 498px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            padding: 60px 75px;
+        }
+
+        .block-rounded {
+            width: 260px;
+        }
+
+        .info-img {
+            width: 258px;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .force-width-img {
+            width: 480px;
+            height: 1px !important;
+        }
+
+        .force-width-full {
+            width: 600px;
+            height: 1px !important;
+        }
+
+        .user-img img {
+            width: 82px;
+            border-radius: 5px;
+            border: 1px solid #cccccc;
+        }
+
+        .user-img {
+            width: 92px;
+            text-align: left;
+        }
+
+        .user-msg {
+            width: 236px;
+            font-size: 14px;
+            text-align: left;
+            font-style: italic;
+        }
+
+        .code-block {
+            padding: 10px 0;
+            border: 1px solid #cccccc;
+            color: #4d4d4d;
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .force-width-gmail {
+            min-width: 600px;
+            height: 0px !important;
+            line-height: 1px !important;
+            font-size: 1px !important;
+        }
+
+        .button-width {
+            width: 228px;
+        }
+    </style>
+
+    <style type="text/css" media="screen">
+        @import url(http://fonts.googleapis.com/css?family=Oxygen:400,700);
+    </style>
+
+    <style type="text/css" media="screen">
+        @media screen {
+            /* Thanks Outlook 2013! */
+            * {
+                font-family: 'Oxygen', 'Helvetica Neue', 'Arial', 'sans-serif' !important;
+            }
+        }
+    </style>
+
+    <style type="text/css" media="only screen and (max-width: 480px)">
+        /* Mobile styles */
+        @media only screen and (max-width: 480px) {
+
+            table[class*="container-for-gmail-android"] {
+                min-width: 290px !important;
+                width: 100% !important;
+            }
+
+            table[class="w320"] {
+                width: 320px !important;
+            }
+
+            img[class="force-width-gmail"] {
+                display: none !important;
+                width: 0 !important;
+                height: 0 !important;
+            }
+
+            a[class="button-width"],
+            a[class="button-mobile"] {
+                width: 248px !important;
+            }
+
+            td[class*="mobile-header-padding-left"] {
+                width: 160px !important;
+                padding-left: 0 !important;
+            }
+
+            td[class*="mobile-header-padding-right"] {
+                width: 160px !important;
+                padding-right: 0 !important;
+            }
+
+            td[class="header-lg"] {
+                font-size: 24px !important;
+                padding-bottom: 5px !important;
+            }
+
+            td[class="header-md"] {
+                font-size: 18px !important;
+                padding-bottom: 5px !important;
+            }
+
+            td[class="content-padding"] {
+                padding: 5px 0 30px !important;
+            }
+
+            td[class="button"] {
+                padding: 15px 0 5px !important;
+            }
+
+            td[class*="free-text"] {
+                padding: 10px 18px 30px !important;
+            }
+
+            img[class="force-width-img"],
+            img[class="force-width-full"] {
+                display: none !important;
+            }
+
+            td[class="info-block"] {
+                display: block !important;
+                width: 280px !important;
+                padding-bottom: 40px !important;
+            }
+
+            td[class="info-img"],
+            img[class="info-img"] {
+                width: 278px !important;
+            }
+
+            td[class="mini-block-container"] {
+                padding: 8px 20px !important;
+                width: 280px !important;
+            }
+
+            td[class="mini-block"] {
+                padding: 20px !important;
+            }
+
+            td[class="user-img"] {
+                display: block !important;
+                text-align: center !important;
+                width: 100% !important;
+                padding-bottom: 10px;
+            }
+
+            td[class="user-msg"] {
+                display: block !important;
+                padding-bottom: 20px !important;
+            }
+        }
+    </style>
+</head>
+
+<body bgcolor="#f7f7f7">
+    <table align="center" cellpadding="0" cellspacing="0" class="container-for-gmail-android" width="100%">
+        <tr>
+            <td align="left" valign="top" width="100%" style="background:repeat-x url(http://s3.amazonaws.com/swu-filepicker/4E687TRe69Ld95IDWyEg_bg_top_02.jpg) #ffffff;">
+                <center>
+                    <img src="http://s3.amazonaws.com/swu-filepicker/SBb2fQPrQ5ezxmqUTgCr_transparent.png" class="force-width-gmail">
+                    <table cellspacing="0" cellpadding="0" width="100%" bgcolor="#ffffff" background="http://s3.amazonaws.com/swu-filepicker/4E687TRe69Ld95IDWyEg_bg_top_02.jpg" style="background-color:transparent">
+                        <tr>
+                            <td width="100%" height="80" valign="top" style="text-align: center; vertical-align:middle;">
+                                <center>
+                                    <table cellpadding="0" cellspacing="0" width="600" class="w320">
+                                        <tr>
+                                            <td>
+                                                <a href=""><img width="137" height="47" src="https://imgur.com/gFE1N8E.png" alt="logo"></a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </center>
+                            </td>
+                        </tr>
+                    </table>
+                </center>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" valign="top" width="100%" style="background-color: #f7f7f7;" class="content-padding">
+                <center>
+                    <table cellspacing="0" cellpadding="0" width="600" class="w320">
+                        <tr>
+                            <td class="mini-block-container">
+                                <table cellspacing="0" cellpadding="0" width="100%" style="border-collapse:separate !important;">
+                                    <tr>
+                                        <td class="mini-block">
+                                            <table cellpadding="0" cellspacing="0" width="100%">
+                                                <tr>
+                                                    <td>
+                                                        <h2><strong>Cambio de contraseña.</strong></h2>
+
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="text-align: left">
+                                                            <h3>
+                                                                <strong>Hola: </strong>@USUARIO
+                                                            </h3>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="text-align: justify">
+                                                            <h3>
+                                                                El cambio de contraseña ha sido realizado con éxito.
+                                                            </h3>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="text-align: left;font-size: 18px;">
+                                                            <p><strong>Usuario:</strong> @CORREO</p>
+                                                            <p><strong>Contraseña:</strong> @Password</p>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div>
+                                                            <h2>
+                                                                Atentamente:
+                                                            </h2>
+                                                            <h2>
+                                                                Ozelot Technologies
+                                                            </h2>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </center>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" width="100%" style="background-color: #f7f7f7; height: 100px;">
+                <div style="float:left; width: 200px;">
+                    <div class="" style="color: #4d4d4d; float:left; width: 100px;" id="left">
+                        <a href="https://twitter.com/ozelot_tech" target="_blank"><img width="44" height="47" src="http://s3.amazonaws.com/swu-filepicker/k8D8A7SLRuetZspHxsJk_social_08.gif" alt="twitter" /></a>
+                        <a href="https://www.facebook.com/ozelottechnologies" target="_blank"><img width="38" height="47" src="http://s3.amazonaws.com/swu-filepicker/LMPMj7JSRoCWypAvzaN3_social_09.gif" alt="facebook" /></a>
+                    </div>
+                    <div style="display: inline-block; margin:0 auto; width:100px;">
+                        <ul>
+                            <li>
+                                <a href="https://www.linkedin.com/company/ozelot-technologies/" target="_blank">LinkedIn</a>
+                            </li>
+                            <li>
+                                <a href="https://ozelot.it/?fbclid=IwAR0Exjm2w4dAFhvTyw3OwTUgmnbNnnoekx4J4SOelh9QDICfRSmXA9qrKGM&fbclid=IwAR0Exjm2w4dAFhvTyw3OwTUgmnbNnnoekx4J4SOelh9QDICfRSmXA9qrKGM" target="_blank">ozelot.it</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="datos" style="display: inline-block; width:200px; margin:0 auto;">
+                    <strong>Ozelot Technologies 2020</strong><br />
+                    contacto@ozelot.it <br />
+                    998 252 3246 <br /><br />
+                </div>
+                <div style="float:right; width:200px;">
+                    .
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>-->
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <!--[if (gte mso 9)|(IE)]>
+      <xml>
+        <o:OfficeDocumentSettings>
+        <o:AllowPNG/>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- So that mobile will display zoomed in -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- enable media queries for windows phone 8 -->
+    <meta name="format-detection" content="telephone=no" /> <!-- disable auto telephone linking in iOS -->
+    <meta name="format-detection" content="date=no" /> <!-- disable auto date linking in iOS -->
+    <meta name="format-detection" content="address=no" /> <!-- disable auto address linking in iOS -->
+    <meta name="format-detection" content="email=no" /> <!-- disable auto email linking in iOS -->
+    <title></title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+
+    <style type="text/css">
+        /*Basics*/
+        body {
+            margin: 0px !important;
+            padding: 0px !important;
+            display: block !important;
+            min-width: 100% !important;
+            width: 100% !important;
+            -webkit-text-size-adjust: none;
+        }
+
+        table {
+            border-spacing: 0;
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+            table td {
+                border-collapse: collapse;
+                mso-line-height-rule: exactly;
+            }
+
+        td img {
+            -ms-interpolation-mode: bicubic;
+            width: auto;
+            max-width: auto;
+            height: auto;
+            margin: auto;
+            display: block !important;
+            border: 0px;
+        }
+
+        td p {
+            margin: 0;
+            padding: 0;
+        }
+
+        td div {
+            margin: 0;
+            padding: 0;
+        }
+
+        td a {
+            text-decoration: none;
+            color: inherit;
+        }
+        /*Outlook*/
+        .ExternalClass {
+            width: 100%;
+        }
+
+            .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
+                line-height: inherit;
+            }
+
+        .ReadMsgBody {
+            width: 100%;
+            background-color: #ffffff;
+        }
+        /* iOS BLUE LINKS */
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+        /*Gmail blue links*/
+        u + #body a {
+            color: inherit;
+            text-decoration: none;
+            font-size: inherit;
+            font-family: inherit;
+            font-weight: inherit;
+            line-height: inherit;
+        }
+        /*Buttons fix*/
+        .undoreset a, .undoreset a:hover {
+            text-decoration: none !important;
+        }
+
+        .yshortcuts a {
+            border-bottom: none !important;
+        }
+
+        .ios-footer a {
+            color: #aaaaaa !important;
+            text-decoration: none;
+        }
+
+        .texto-Responsivo {
+            width: 90%;
+            word-wrap: break-word;
+        }
+        /*Responsive*/
+        @media screen and (max-width: 799px) {
+            .texto-Responsivo {
+                width: 100%;
+                height: auto;
+                overflow-wrap: break-word;
+            }
+
+            table.row {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            td.row {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            .img-responsive img {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: auto !important;
+                margin: auto;
+            }
+
+            .center-float {
+                float: none !important;
+                margin: auto !important;
+            }
+
+            .center-text {
+                text-align: center !important;
+            }
+
+            .container-padding {
+                width: 100% !important;
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+            }
+
+            .container-padding10 {
+                width: 100% !important;
+                padding-left: 10px !important;
+                padding-right: 10px !important;
+            }
+
+            .hide-mobile {
+                display: none !important;
+            }
+
+            .menu-container {
+                text-align: center !important;
+            }
+
+            .autoheight {
+                height: auto !important;
+            }
+
+            .m-padding-10 {
+                margin: 10px 0 !important;
+            }
+
+            .m-padding-15 {
+                margin: 15px 0 !important;
+            }
+
+            .m-padding-20 {
+                margin: 20px 0 !important;
+            }
+
+            .m-padding-30 {
+                margin: 30px 0 !important;
+            }
+
+            .m-padding-40 {
+                margin: 40px 0 !important;
+            }
+
+            .m-padding-50 {
+                margin: 50px 0 !important;
+            }
+
+            .m-padding-60 {
+                margin: 60px 0 !important;
+            }
+
+            .m-padding-top10 {
+                margin: 30px 0 0 0 !important;
+            }
+
+            .m-padding-top15 {
+                margin: 15px 0 0 0 !important;
+            }
+
+            .m-padding-top20 {
+                margin: 20px 0 0 0 !important;
+            }
+
+            .m-padding-top30 {
+                margin: 30px 0 0 0 !important;
+            }
+
+            .m-padding-top40 {
+                margin: 40px 0 0 0 !important;
+            }
+
+            .m-padding-top50 {
+                margin: 50px 0 0 0 !important;
+            }
+
+            .m-padding-top60 {
+                margin: 60px 0 0 0 !important;
+            }
+
+            .m-height10 {
+                font-size: 10px !important;
+                line-height: 10px !important;
+                height: 10px !important;
+            }
+
+            .m-height15 {
+                font-size: 15px !important;
+                line-height: 15px !important;
+                height: 15px !important;
+            }
+
+            .m-height20 {
+                font-size: 20px !important;
+                line-height: 20px !important;
+                height: 20px !important;
+            }
+
+            .m-height25 {
+                font-size: 25px !important;
+                line-height: 25px !important;
+                height: 25px !important;
+            }
+
+            .m-height30 {
+                font-size: 30px !important;
+                line-height: 30px !important;
+                height: 30px !important;
+            }
+
+            .rwd-on-mobile {
+                display: inline-block !important;
+                padding: 5px;
+            }
+
+            .center-on-mobile {
+                text-align: center !important;
+            }
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+</head>
+
+<body style="margin-top: 0; margin-bottom: 0; padding-top: 0; padding-bottom: 0; width: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;" bgcolor="#f0f0f0">
+
+    <span class="preheader-text" style="color: transparent; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; visibility: hidden; width: 0; display: none; mso-hide: all;"></span>
+
+    <div style="display:none; font-size:0px; line-height:0px; max-height:0px; max-width:0px; opacity:0; overflow:hidden; visibility:hidden; mso-hide:all;"></div>
+
+    <table border="0" align="center" cellpadding="0" cellspacing="0" width="100%" style="width:100%;max-width:100%;">
+        <tr>
+            <!-- Outer Table -->
+            <td align="center" bgcolor="#f0f0f0" data-composer=data-composer>
+
+                <table border="0" align="center" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="width:100%;max-width:100%;">
+                    <!-- lotus-header-18-->
+                    <tr>
+                        <td align="center" bgcolor="black" class="container-padding">
+
+                            <!-- Content -->
+                            <table border="0" align="center" cellpadding="0" cellspacing="0" role="presentation" class="row" width="580" style="width:580px;max-width:580px;">
+                                <tr>
+                                    <td height="40" style="font-size:40px;line-height:40px;">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">
+                                        <!-- Logo & Webview -->
+                                        <table border="0" align="center" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="width:100%;max-width:100%;">
+                                            <tr>
+                                                <td align="center">
+                                                    <!-- Logo & Webview -->
+                                                    <table border="0" align="center" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="width:100%;max-width:100%;">
+                                                        <tr>
+                                                            <td align="center" class="container-padding">
+
+                                                                <!--[if (gte mso 9)|(IE)]><table border="0" cellpadding="0" cellspacing="0" dir="rtl"><tr><td><![endif]-->
+                                                                <!-- column -->
+                                                                <table border="0" align="right" cellpadding="0" cellspacing="0" role="presentation" class="row" width="280" style="width:280px;max-width:280px;">
+                                                                    <tr>
+                                                                        <td class="center-text" align="right" height="22" style="height: 22px;">
+                                                                            <a href="#" style="font-family:'Poppins',Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;font-style:italic;font-weight:400;color:#b5beff;text-decoration:none;letter-spacing:0px;"></a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                                <!-- column -->
+                                                                <!--[if (gte mso 9)|(IE)]></td><td><![endif]-->
+                                                                <!-- gap -->
+                                                                <table border="0" align="right" cellpadding="0" cellspacing="0" role="presentation" class="row" width="20" style="width:20px;max-width:20px;">
+                                                                    <tr>
+                                                                        <td height="20" style="font-size:20px;line-height:20px;">&nbsp;</td>
+                                                                    </tr>
+                                                                </table>
+                                                                <!-- gap -->
+                                                                <!--[if (gte mso 9)|(IE)]></td><td><![endif]-->
+                                                                <!-- column -->
+                                                                <table border="0" align="right" cellpadding="0" cellspacing="0" role="presentation" class="row" width="280" style="width:280px;max-width:280px;">
+                                                                    <tr>
+                                                                        <td align="left" class="center-text">
+                                                                            <img style="width:100%;border:0px;display: inline!important;" src="https://i.imgur.com/bXqAlKM.png" border="0" alt="logo" />
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                                <!-- column -->
+                                                                <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->
+
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <!-- Logo & Webview -->
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <!-- Logo & Webview -->
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="40" style="font-size:40px;line-height:40px;">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td align="center" class="center-text">
+                                        <!--
+                                            descomentar esta linea cuando ya se tanga la imagen png en el servidor
+                                            <img style="width:190px;border:0px;display: inline!important;" src="https://payments.ozelot.it/assets/media/files/undraw_order_confirmed_aaw7_verde.png" width="190" border="0" alt="Logo Ozelot" />-->
+                                        <img style="width:190px;border:0px;display: inline!important;" src="https://i.imgur.com/QiSvlwp.png" width="190" border="0" alt="Logo Ozelot" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="40" style="font-size:40px;line-height:40px;">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="center-text" align="center" style="font-family:'Roboto Slab',Arial,Helvetica,sans-serif;font-size:42px;line-height:52px;font-weight:400;font-style:normal;color:#FFFFFF;text-decoration:none;letter-spacing:0px;">
+
+                                        <div>
+                                            ¡NUEVO ADENDUM!
+                                        </div>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="10" style="font-size:10px;line-height:10px;">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="center-text" align="center" style="font-family:'Roboto Slab',Arial,Helvetica,sans-serif;font-size:26px;line-height:36px;font-weight:400;font-style:normal;color:#bdd530;text-decoration:none;letter-spacing:0px;">
+                                        <div>
+                                            ¡HOLA!
+                                        </div>
+                                        <div>
+                                            @USUARIO
+                                        </div>
+                                        <div style="color: white; font-size: 18px; margin-top: 30px;">Te informamos que se ha creado un nuevo adendum</div>
+                                    </td>
+                                </tr>
+                                <!--<tr>
+                                    <td height="20" style="font-size:20px;line-height:20px;">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="center-text" align="center" style="font-family:'Poppins',Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;font-weight:300;font-style:normal;color:#FFFFFF;text-decoration:none;letter-spacing:0px;">
+
+                                        <div>
+                                            Has sido registrado con los siguientes datos.
+                                        </div>
+
+                                    </td>
+                                </tr>-->
+                                <tr>
+                                    <td height="40" style="font-size:40px;line-height:40px;">&nbsp;</td>
+                                </tr>
+                            </table>
+                            <!-- Content -->
+
+                        </td>
+                    </tr>
+                </table>
+
+                <table border="0" align="center" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="width:100%;max-width:100%;">
+                    <!-- lotus-arrow-divider -->
+                    <tr>
+                        <td align="center" bgcolor="#FFFFFF">
+                            <img style="width:50px;border:0px;display: inline!important;" src="https://imgur.com/7UaQZJq.png" width="50" border="0" alt="arrow" />
+                        </td>
+                    </tr>
+                </table>
+
+                <table border="0" align="center" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="width:100%;max-width:100%;">
+                    <!-- lotus-content-18 -->
+                    <tr>
+                        <td align="center" bgcolor="#FFFFFF" class="container-padding">
+
+                            <!-- Content -->
+                            <table border="0" align="center" cellpadding="0" cellspacing="0" role="presentation" class="row" width="580" style="width:580px;max-width:580px;">
+                                <tr>
+                                    <td height="40" style="font-size:40px;line-height:40px;">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td align="center" bgcolor="#f4f5fa">
+                                        <!-- Content -->
+                                        <table border="0" align="center" cellpadding="0" cellspacing="0" role="presentation" class="row" width="480" style="width:480px;max-width:480px;">
+                                            <tr>
+                                                <td height="40" style="font-size:40px;line-height:40px;">&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center">
+                                                    <!--[if (gte mso 9)|(IE)]><table border="0" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+                                                    <!-- Column -->
+                                                    <table border="0" align="left" cellpadding="0" cellspacing="0" role="presentation" class="row" width="225" style="width:225px;max-width:225px;">
+                                                        <tr>
+                                                            <td class="center-text" align="left" style="font-family:'Roboto Slab',Arial,Helvetica,sans-serif;font-size:20px;line-height:26px;font-weight:400;font-style:normal;color:#0678be;text-decoration:none;letter-spacing:0px;">
+
+                                                                <div>
+                                                                    Adendum:
+                                                                </div>
+
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="10" style="font-size:10px;line-height:10px;">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="center-text" align="left" style="font-family:'Poppins',Arial,Helvetica,sans-serif;font-size:14px;line-height:24px;font-weight:400;font-style:normal;color:#282828;text-decoration:none;letter-spacing:0px; height: auto;">
+
+                                                                <div>
+                                                                    @NOMBREPROYECTO
+                                                                </div>
+
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <!-- Column -->
+                                                    <!--[if (gte mso 9)|(IE)]></td><td><![endif]-->
+                                                    <!-- gap -->
+                                                    <table border="0" align="left" cellpadding="0" cellspacing="0" role="presentation" width="30" style="width:30px;max-width:30px;">
+                                                        <tr>
+                                                            <td height="20" style="font-size:20px;line-height:20px;">&nbsp;</td>
+                                                        </tr>
+                                                    </table>
+                                                    <!-- gap -->
+                                                    <!--[if (gte mso 9)|(IE)]></td><td><![endif]-->
+                                                    <!-- Column -->
+                                                    <table border="0" align="left" cellpadding="0" cellspacing="0" role="presentation" class="row" width="225" style="width:225px;max-width:225px;">
+                                                        <tr>
+                                                            <td class="center-text" align="left" style="font-family:'Roboto Slab',Arial,Helvetica,sans-serif;font-size:20px;line-height:26px;font-weight:400;font-style:normal;color:#0678be;text-decoration:none;letter-spacing:0px;">
+
+                                                                <div>
+                                                                    Encargado:
+                                                                </div>
+
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="10" style="font-size:10px;line-height:10px;">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="center-text" align="left" style="font-family:'Poppins',Arial,Helvetica,sans-serif;font-size:14px;line-height:24px;font-weight:400;font-style:normal;color:#282828;text-decoration:none;letter-spacing:0px;">
+
+                                                                <div>
+                                                                    @ENCARGADO
+                                                                </div>
+
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <!-- Column -->
+                                                    <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->
+                                                    <table border="0" align="left" cellpadding="0" cellspacing="0" role="presentation" width="30" style="width:30px;max-width:30px;">
+                                                        <tr>
+                                                            <td height="20" style="font-size:20px;line-height:20px;">&nbsp;</td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td height="40" style="font-size:40px;line-height:40px;">&nbsp;</td>
+                                            </tr>
+                                        </table>
+                                        <!-- Content -->
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="30" style="font-size:30px;line-height:30px;">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td height="30" style="font-size:30px;line-height:30px;">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">
+                                        <div style="color: #0678be; font-weight: bold; font-family:'Roboto Slab',Arial,Helvetica,sans-serif;">ATENTAMENTE</div>
+                                        <div style="font-family:'Poppins'">SYSSTEMA</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="40" style="font-size:40px;line-height:40px;">&nbsp;</td>
+                                </tr>
+                            </table>
+                            <!-- Content -->
+
+                        </td>
+                    </tr>
+                </table>
+
+                <table border="0" align="center" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="width:100%;max-width:100%;">
+                    <!-- lotus-footer-18 -->
+                    <tr>
+                        <td align="center" bgcolor="#f0f0f0" class="container-padding">
+
+                            <!-- Content -->
+                            <table border="0" align="center" cellpadding="0" cellspacing="0" role="presentation" class="row" width="580" style="width:580px;max-width:580px;">
+                                <tr>
+                                    <td height="50" style="font-size:50px;line-height:50px;">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">
+                                        <!-- Social Icons -->
+                                        <table border="0" align="center" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="width:100%;max-width:100%;">
+                                            <tr>
+                                                <td align="center" style="font-family:'Poppins',Arial,Helvetica,sans-serif;font-size:14px;line-height:24px;font-weight:400;font-style:normal;color:#6e6e6e;text-decoration:none;letter-spacing:0px;">
+                                                    <div>
+                                                        © 2020 Atika All Rights Reserved.
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <!-- Social Icons -->
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="30" style="font-size:30px;line-height:30px;">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td height="30" style="font-size:30px;line-height:30px;">&nbsp;</td>
+                                </tr>
+
+                                <tr>
+                                    <td height="30" style="font-size:30px;line-height:30px;">&nbsp;</td>
+                                </tr>
+                            </table>
+                            <!-- Content -->
+
+                        </td>
+                    </tr>
+                </table>
+
+            </td>
+        </tr><!-- Outer-Table -->
+    </table>
+
+</body>
+</html>

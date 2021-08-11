@@ -1,0 +1,179 @@
+﻿@using Domain.AspNet
+@using Microsoft.AspNetCore.Identity
+@model Domain.ViewModels.LoginViewModel
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@{
+    ViewData["Title"] = "Acceso";
+}
+<div class="k-grid__item   k-grid__item--fluid k-grid  k-grid k-grid--hor k-login-v2" id="k_login_v2">
+
+    <!--begin::Item-->
+    <div class="k-grid__item  k-grid--hor">
+
+        <!--begin::Heade-->
+        <div class="k-login-v2__head">
+            <div class="k-login-v2__head-logo">
+                <a href="#">
+                   
+                </a>
+            </div>
+            
+        </div>
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert alert-danger fade show" role="alert">
+                <div class="alert-icon"><i class="flaticon-warning"></i></div>
+                <div class="alert-text">Error @TempData["Error"]</div>
+                <div class="alert-close">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true"><i class="la la-close"></i></span>
+                    </button>
+                </div>
+            </div>
+        }
+        <!--begin::Head-->
+    </div>
+
+    <!--end::Item-->
+    <!--begin::Item-->
+    <div class="k-grid__item  k-grid--hor">
+
+        <!--begin::Body-->
+        <div class="k-login-v2__body">
+            @*<div class="k-login-v2__body-pic">
+                    <img src="../assets/media/misc/bg_icon.svg" alt="">
+                </div>*@
+            <!--begin::Wrapper-->
+            <div class="k-login-v2__body-wrapper" id="loginWrapper">
+                <div class="k-login-v2__body-container" id="loginContainer">
+                    <div class="k-login-v2__body-title">
+                        <h3>  Accede a tu cuenta</h3>
+                    </div>
+
+                    <!--begin::Form-->
+                    <form class="k-login-v2__body-form k-form k-login-v2__body-form--border" asp-controller="Account" asp-action="Login" autocomplete="off" onsubmit="miFuncion()">
+                        <input type="hidden" value="@ViewData["ReturnUrl"]" name="returnUrl" />
+                        <div class="form-group">
+                            <input class="form-control" required type="text" placeholder="Correo" name="Email" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" required type="password" placeholder="Contraseña" name="Password" autocomplete="off">
+                        </div>
+                       
+                        <div class="k-login-v1__body-action">
+
+
+                        </div>
+                        <div class="k-login-v2__body-action k-login-v2__body-action--brand">
+                            <a href="#" id="btnOlvidaste">
+                              
+                            </a>
+                            <button type="submit" id="enviar" class="btn btn-pill btn-brand btn-elevate" >Iniciar</button>
+
+                        </div>
+
+                    </form>
+
+                    <!--end::Form-->
+                    <!--begin::Separator-->
+                    <div class="k-login-v2__body-separator">
+                        <div class="k-separator k-separator--space-lg  k-separator--border-solid"></div>
+                    </div>
+
+
+                    <!--begin::Options-->
+                    @*<div class="k-login-v2__body-options">
+                            <a href="#" class="btn k-font-primary k-login-v2__body-option--primary">
+                                <i class="fab fa-facebook-f k-font-primary"></i>
+                                Facebook
+                            </a>
+                            <a href="#" class="btn k-font-info k-login-v2__body-option--info">
+                                <i class="fab fa-twitter k-font-info"></i>
+                                Twitter
+                            </a>
+                            <a href="#" class="btn k-font-warning k-login-v2__body-option--warning">
+                                <i class="fab fa-google k-font-warning"></i>
+                                Google
+                            </a>
+                        </div>*@
+
+                    <!--end::Options-->
+                </div>
+
+                <!--<div class="k-login-v2__body-container" id="recuperarPwdContainer" style="display:none; margin-top: -55px;">
+                    <div class="k-login-v2__body-title">
+                        <h3>¿Olvidaste tu contraseña?</h3>
+                    </div>-->
+
+                    <!--begin::Form-->
+                    <!--<form class="k-login-v2__body-form k-form k-login-v2__body-form--border" id="formRecuperaPwd" autocomplete="off">
+                        <div class="form-group form-group-last">
+                            <div class="alert alert-secondary" role="alert">
+                                <div class="alert-icon"><i class="flaticon-questions-circular-button"></i></div>
+                                <div class="alert-text">Ingrese su dirección de correo electrónico a continuación para restablecer su contraseña.</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" required type="email" placeholder="Correo electrónico" autocomplete="off" name="email">
+                            <span class="form-text text-danger"></span>
+                        </div>
+
+                        <div class="k-login-v1__body-action">
+
+
+                        </div>
+                        <div class="k-portlet__foot">
+                            <div class="k-form__actions">
+                                <div class="row">
+                                    <div class="col-lg-3"></div>
+                                    <div class="col-lg-9">
+                                        <button type="reset" class="btn btn-secondary" id="btnRegresarLogin">Regresar</button>
+                                        <button type="reset" class="btn btn-primary" id="btnRecuperarPwd">Recuperar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>-->
+            </div>
+
+            <!--end::Wrapper-->
+            <!--begin::Pic-->
+            <div class="k-login-v2__body-pic">
+                <img src="../assets/media/misc/bg_icon.svg" alt="">
+
+            </div>
+
+            <!--begin::Pic-->
+        </div>
+
+        <!--begin::Body-->
+    </div>
+
+    <!--end::Item-->
+    <!--begin::Item-->
+    <div class="k-grid__item">
+        <div class="k-login-v2__footer">
+            <div class="k-login-v2__footer-info">
+                
+            </div>
+        </div>
+    </div>
+
+    <!--end::Item-->
+</div>
+
+
+
+@section scripts {
+    <script src="~/assets/vendors/general/jquery-validation/dist/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="~/assets/vendors/general/jquery-validation/dist/localization/messages_es.js" type="text/javascript"></script>
+    <link href="~/assets/vendors/general/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/assets/vendors/general/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="~/assets/vendors/custom/theme/framework/vendors/sweetalert2/init.js" type="text/javascript"></script>
+    <script src="~/assets/vendors/general/block-ui/jquery.blockUI.js" type="text/javascript"></script>
+}

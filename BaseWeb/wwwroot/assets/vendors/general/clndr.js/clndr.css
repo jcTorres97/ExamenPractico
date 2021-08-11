@@ -1,0 +1,299 @@
+.noselect {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+#mini-clndr {
+    
+    margin: 0 auto;
+    width: 294px;
+        
+}
+
+    #mini-clndr .clndr {
+        overflow: hidden;
+        
+    }
+
+        #mini-clndr .clndr .controls {
+            background-color: #69a776;
+            color: white;
+        }
+
+            #mini-clndr .clndr .controls .clndr-previous-button,
+            #mini-clndr .clndr .controls .clndr-next-button {
+                width: 15%;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                display: inline-block;
+                text-align: center;
+                cursor: pointer;
+                background-color: #69a776;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+            }
+
+                #mini-clndr .clndr .controls .clndr-previous-button:hover,
+                #mini-clndr .clndr .controls .clndr-next-button:hover {
+                    
+                }
+
+            #mini-clndr .clndr .controls .month {
+                width: 70%;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                display: inline-block;
+                text-align: center;
+                text-transform: uppercase;
+                font-weight: 700;
+                letter-spacing: 1px;
+            }
+
+        #mini-clndr .clndr .days-container {
+            position: relative;
+            width: 294px;
+            height: 213px;
+        }
+
+            #mini-clndr .clndr .days-container .days {
+                position: absolute;
+                left: 0;
+                width: 294px;
+                height: 217px;
+                background-color:;
+            }
+
+                #mini-clndr .clndr .days-container .days .day,
+                #mini-clndr .clndr .days-container .days .empty {
+                    width: 42px;
+                    display: inline-block;
+                    padding-top: 8px;
+                    padding-bottom: 8px;
+                    font-size: 12px;
+                    text-align: center;
+                    color: #212121;
+                    border-right: 1px solid rgba(255,255,255,0.5);
+                    border-bottom: 1px solid rgba(255,255,255,0.5);
+                }
+
+                    #mini-clndr .clndr .days-container .days .day.event,
+                    #mini-clndr .clndr .days-container .days .empty.event {
+                        background-color: #343434;
+                        cursor: pointer;
+                    }
+
+                        #mini-clndr .clndr .days-container .days .day.event:hover,
+                        #mini-clndr .clndr .days-container .days .empty.event:hover {
+                            background-color: #343434;
+                        }
+
+                    #mini-clndr .clndr .days-container .days .day.adjacent-month,
+                    #mini-clndr .clndr .days-container .days .empty.adjacent-month {
+                        color: rgba(0,0,0,0.3);
+                    }
+
+                #mini-clndr .clndr .days-container .days .empty {
+                    height: 31px;
+                    vertical-align: bottom;
+                }
+
+                #mini-clndr .clndr .days-container .days .headers {
+                    background-color:;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                }
+
+                    #mini-clndr .clndr .days-container .days .headers .day-header {
+                        width: 42px;
+                        display: inline-block;
+                        text-align: center;
+                        color: white;
+                    }
+
+            #mini-clndr .clndr .days-container .events {
+                position: absolute;
+                left: 294px;
+                width: 294px;
+                height: 217px;
+                background-color:;
+            }
+
+                #mini-clndr .clndr .days-container .events .headers {
+                    position: relative;
+                }
+
+                #mini-clndr .clndr .days-container .events .event-header {
+                    width: 100%;
+                    background-color:;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    text-align: center;
+                    color: white;
+                }
+
+                #mini-clndr .clndr .days-container .events .x-button {
+                    position: absolute;
+                    font-size: 80%;
+                    top: 7px;
+                    left: 20px;
+                    cursor: pointer;
+                }
+
+                    #mini-clndr .clndr .days-container .events .x-button:hover {
+                        color: white;
+                    }
+
+                #mini-clndr .clndr .days-container .events .events-list {
+                    overflow: scroll;
+                    height: 185px;
+                }
+
+                    #mini-clndr .clndr .days-container .events .events-list .event {
+                        padding-top: 8px;
+                        padding-bottom: 8px;
+                        padding-left: 10px;
+                        border-bottom: 1px solid rgba(255,255,255,0.5);
+                    }
+
+                        #mini-clndr .clndr .days-container .events .events-list .event:hover {
+                            background-color: #343434;
+                        }
+
+                        #mini-clndr .clndr .days-container .events .events-list .event a {
+                            position: relative;
+                            font-size: 12px;
+                            letter-spacing: 1px;
+                            background-color: transparent;
+                            color: #212121;
+                            text-decoration: none;
+                        }
+
+                            #mini-clndr .clndr .days-container .events .events-list .event a:hover {
+                                background-color: transparent;
+                                color:;
+                            }
+
+            #mini-clndr .clndr .days-container.show-events .days {
+                left: -294px;
+            }
+
+            #mini-clndr .clndr .days-container.show-events .events {
+                left: 0;
+            }
+
+
+#full-clndr {
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+#full-clndr .clndr-controls {
+    padding: 14px;
+    text-align: center;
+
+}
+
+#full-clndr .clndr-controls .clndr-previous-button {
+    float: left;
+    text-align: left;
+}
+
+#full-clndr .clndr-controls .clndr-next-button {
+    float: right;
+    text-align: right;
+}
+
+#full-clndr .clndr-controls .clndr-previous-button,
+#full-clndr .clndr-controls .clndr-next-button {
+    width: 30px;
+    cursor: pointer;
+}
+
+#full-clndr .clndr-controls .month {
+    width: 60%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+#full-clndr .clndr-grid {
+    float: left;
+    width: 60%;
+    border-right: 2px solid white;
+}
+
+    #full-clndr .clndr-grid .days-of-the-week {
+        width: 100%;
+        background-color: #3d4465;
+        text-transform: uppercase;
+    }
+
+            #full-clndr .clndr-grid .days-of-the-week .header-day {
+                float: left;
+                width: 14.2857%;
+                
+                text-align: center;
+                color: white;
+            }
+
+    #full-clndr .clndr-grid .days {
+        width: 100%;
+       
+    }
+
+        #full-clndr .clndr-grid .days .day,
+        #full-clndr .clndr-grid .days .empty {
+            float: left;
+            width: 14.2857%;
+            height: 35px;
+            padding: 5px 0;
+            text-align: center;
+            
+        }
+
+            #full-clndr .clndr-grid .days .day.event,
+            #full-clndr .clndr-grid .days .empty.event {
+                
+               
+                /*border-bottom: 2px solid;*/
+                background-color: #343434;
+                cursor: pointer;
+            }
+
+                #full-clndr .clndr-grid .days .day.adjacent-month .day-number,
+                #full-clndr .clndr-grid .days .empty.adjacent-month .day-number {
+                    opacity: 0.4;
+                }
+
+            #full-clndr .clndr-grid .days .today {
+                
+            }
+
+    #full-clndr .event-listing {
+        float: left;
+        width: 40%;
+    }
+
+        #full-clndr .event-listing .event-listing-title {
+            padding: 14px;
+            background-color:;
+            text-align: center;
+            
+            letter-spacing: 1px;
+        }
+
+        #full-clndr .event-listing .event-item {
+            padding: 5px;
+            color: #4f4f4f;
+        }
+
+        #full-clndr .event-listing .event-item-location {
+            font-weight: 400;
+        }
+

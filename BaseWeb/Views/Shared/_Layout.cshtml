@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!--begin::Web font -->
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+    <script>
+
+        WebFont.load({
+            google: { "families": ["Poppins:300,400,500,600,700"] },
+            active: function () {
+                sessionStorage.fonts = true;
+            }
+        });
+    </script>
+    @*<link rel="stylesheet" href="~/assets/css/preload.min.css">
+        <link rel="stylesheet" href="~/assets/css/plugins.min.css">
+        <link rel="stylesheet" href="~/assets/css/style.deep-purple-500.min.css">*@
+    <!--end::Web font -->
+    @{ await Html.RenderPartialAsync("_StylesPartial"); }
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.18/b-1.5.6/b-html5-1.5.6/b-print-1.5.6/r-2.2.2/datatables.min.css" />
+    <link rel="shortcut icon" />
+    <script src="~/js/libs/jquery-3.2.1.js"></script>
+    <script src="~/js/libs/jquery-ui-1.12.1.min.js"></script>
+    <script src="~/js/plugin/jquery-validate/jquery.validate.js"></script>
+    <script src="~/js/plugin/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/js/plugin/jquery-validate/jquery.validate.unobtrusive.min.js"></script>
+    @*<script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>*@
+    <script src="~/assets/vendors/general/block-ui/jquery.blockUI.js" type="text/javascript"></script>
+    <script src="~/assets/demo/default/custom/components/extended/blockui.js" type="text/javascript"></script>
+
+</head>
+<body class="k-header--fixed k-header-mobile--fixed k-aside--enabled k-aside--fixed">
+    <div id="ms-preload" class="ms-preload">
+        <div id="status">
+            <div class="spinner">
+                <div class="dot1"></div>
+                <div class="dot2"></div>
+            </div>
+        </div>
+    </div>
+    <!-- begin:: Page -->
+    <!-- begin:: Header Mobile -->
+    <div id="k_header_mobile" class="k-header-mobile  k-header-mobile--fixed ">
+        @*<div class="k-header-mobile__logo">
+                <a href="index.html">
+                    <img alt="Logo" src="~/images/UIMQROO/logos/logo_uimqroo.png" height="50" width="150" />
+                </a>
+            </div>*@
+        <div class="k-header-mobile__toolbar">
+            <button class="k-header-mobile__toolbar-toggler k-header-mobile__toolbar-toggler--left" id="k_aside_mobile_toggler"><span></span></button>
+
+            <button class="k-header-mobile__toolbar-topbar-toggler" id="k_header_mobile_topbar_toggler"><i class="flaticon-more"></i></button>
+        </div>
+    </div>
+
+    <div class="k-grid k-grid--hor k-grid--root">
+        <div class="k-grid__item k-grid__item--fluid k-grid k-grid--ver k-page">
+            @{ await Html.RenderPartialAsync("_Navigation"); }
+
+            <div class="k-grid__item k-grid__item--fluid k-grid k-grid--hor k-wrapper" id="k_wrapper">
+
+
+                @{ await Html.RenderPartialAsync("_Header"); }
+
+
+                <div class="k-content	k-grid__item k-grid__item--fluid k-grid k-grid--hor" id="k_content">
+
+
+                    @RenderBody()
+
+                </div>
+
+                @{ await Html.RenderPartialAsync("_Footer"); }
+
+            </div>
+        </div>
+    </div>
+
+
+    <div id="k_scrolltop" class="k-scrolltop">
+        <i class="la la-arrow-up"></i>
+    </div>
+
+
+    <script>
+        var KAppOptions = {
+            "colors": {
+                "state": {
+                    "brand": "#5d78ff",
+                    "metal": "#c4c5d6",
+                    "light": "#ffffff",
+                    "accent": "#00c5dc",
+                    "primary": "#5867dd",
+                    "success": "#34bfa3",
+                    "info": "#36a3f7",
+                    "warning": "#ffb822",
+                    "danger": "#fd3995",
+                    "focus": "#9816f4"
+                },
+                "base": {
+                    "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                    "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+                }
+            }
+        };
+
+    </script>
+
+
+    @{ await Html.RenderPartialAsync("_ScriptsPartial"); }
+    <script>
+        $('#example').DataTable({
+            language: {
+                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+            },
+            fixedColumns: true,
+            dom: 'B<"clear">lfrtip',
+            buttons: {
+                name: 'primary',
+                buttons: [
+                    { extend: 'print', text: 'Imprimir', exportOptions: { columns: '.Print' } },
+                    { extend: 'copyHtml5', text: 'Copiar', exportOptions: { columns: '.Print' } },
+                    { extend: 'excelHtml5', text: 'Excel', exportOptions: { columns: '.Print' } },
+                    { extend: 'csvHtml5', text: 'Csv', exportOptions: { columns: '.Print' } },
+                    { extend: 'pdfHtml5', text: 'Pdf', exportOptions: { columns: '.Print' } }
+                ]
+            }
+        });
+    </script>
+    @RenderSection("Scripts", required: false)
+
+
+
+</body>
+
+
+</html>

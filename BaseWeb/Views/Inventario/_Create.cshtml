@@ -1,0 +1,56 @@
+﻿@model Domain.Objetos.Inventario
+
+@{
+    ViewData["Title"] = "Crear";
+    ViewData["Section"] = "Inventario";
+    SelectList sucursales = ViewBag.Sucursales;
+    SelectList products = ViewBag.Products;
+}
+
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+<link href="~/assets/vendors/general/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet" type="text/css" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/css/select2.min.css" rel="stylesheet" type="text/css" />
+
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">@ViewData["Title"] @ViewData["Section"]</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<form method="post" asp-action="Create" id="formCrear">
+    <div class="modal-body">
+        @Html.AntiForgeryToken()
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <label><font color="red">*</font> Sucursal</label>
+                        <select asp-for="IdSucursal" asp-items="sucursales" class="form-control"></select>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <label><font color="red">*</font> Producto</label>
+                        <select asp-for="IdProducto" asp-items="products" class="form-control"></select>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <label><font color="red">*</font> Stock</label>
+                        <input type="int" asp-for="Stock" class="form-control" placeholder="Ingresa el stock del producto" required autocomplete="off" />
+                        <span asp-validation-for="Stock" class="form-text text-danger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <span class="d-inline-block" tabindex="0" data-toggle="k-tooltip" data-skin="dark" title="" data-original-title="Cancelar">
+            <button type="button" class="btn btn-secondary flaticon-refresh" data-dismiss="modal" title="Cancelar"> Cancelar</button>
+        </span>
+        <span class="d-inline-block" tabindex="0" data-toggle="k-tooltip" data-skin="dark" title="" data-original-title="Guardar">
+            <button type="submit" class="btn btn-primary flaticon-folder-1" title="Guardar"> Guardar</button>
+        </span>
+    </div>
+</form>
+
+<script src="~/assets/vendors/general/bootstrap-select/dist/js/bootstrap-select.js" type="text/javascript"></script>
+<script src="~/assets/demo/default/custom/components/forms/widgets/bootstrap-select.js" type="text/javascript"></script>
