@@ -12,11 +12,13 @@ namespace BaseWeb.Controllers.Operacion
     {
         private readonly IProductoServicio _productServices;
         private readonly IInventarioServicio _inventoryServices;
+        private readonly IBitacoraServicio _bitacoraServices;
 
-        public ProductoController(IProductoServicio productServices, IInventarioServicio inventoryServices)
+        public ProductoController(IProductoServicio productServices, IInventarioServicio inventoryServices, IBitacoraServicio bitacoraServices)
         {
             _productServices = productServices;
             _inventoryServices = inventoryServices;
+            _bitacoraServices = bitacoraServices;
         }
 
         public async Task<IActionResult> Index()
@@ -51,6 +53,14 @@ namespace BaseWeb.Controllers.Operacion
                 var response = await _productServices.Create(producto);
                 if (response.Success) // Validamos sí el producto se creó.
                 {
+                    Bitacora bitacora = new Bitacora();
+
+                    bitacora.Accion = "Crear";
+                    bitacora.NuevoValor = producto.Name;
+                    bitacora.Objeto = "Producto";
+                    bitacora.Responsable = HttpContext.User.Identity.Name;
+
+                    await _bitacoraServices.Create(bitacora);
                     return Json(new { success = response.Success, msj = response.Message, });
                 }
                 else
@@ -82,9 +92,18 @@ namespace BaseWeb.Controllers.Operacion
         {
             if (ModelState.IsValid)
             {
+                Bitacora bitacora = new Bitacora();
+
+                bitacora.Accion = "Editar";
+                bitacora.Objeto = "Producto";
+                bitacora.Responsable = HttpContext.User.Identity.Name;
+
                 var response = await _productServices.Edit(producto);
+
                 if (response.Success) // Validamos sí el producto se editó correctamente.
                 {
+                    bitacora.NuevoValor = producto.Name;
+                    await _bitacoraServices.Create(bitacora);
                     return Json(new { success = response.Success, msj = response.Message });
                 }
                 else
@@ -103,9 +122,18 @@ namespace BaseWeb.Controllers.Operacion
             {
                 return RedirectToAction("Index");
             }
+
             var response = await _productServices.Remove(id);
             if (response.Success) // Validamos sí la sucursal se eliminó.
             {
+                Bitacora bitacora = new Bitacora();
+
+                bitacora.Accion = "Eliminar";
+                bitacora.NuevoValor = "N/A";
+                bitacora.Objeto = "Producto";
+                bitacora.Responsable = HttpContext.User.Identity.Name;
+
+                await _bitacoraServices.Create(bitacora);
                 return Json(new { success = response.Success, msj = response.Message });
             }
             else

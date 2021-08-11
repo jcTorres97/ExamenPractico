@@ -51,6 +51,7 @@ namespace BaseWeb
             services.AddTransient<ISucursalServicio, SucursalServicio>();
             services.AddTransient<IProductoServicio, ProductoServicio>();
             services.AddTransient<IInventarioServicio, InventarioServicio>();
+            services.AddTransient<IBitacoraServicio, BitacoraServicio>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

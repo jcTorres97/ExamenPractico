@@ -14,12 +14,14 @@ namespace BaseWeb.Controllers.Operacion
         private readonly IInventarioServicio _inventoryServices;
         private readonly ISucursalServicio _sucursalServices;
         private readonly IProductoServicio _productServices;
+        private readonly IBitacoraServicio _bitacoraServices;
 
-        public InventarioController(IInventarioServicio inventoryServices, ISucursalServicio sucursalServices, IProductoServicio productServices)
+        public InventarioController(IInventarioServicio inventoryServices, ISucursalServicio sucursalServices, IProductoServicio productServices, IBitacoraServicio bitacoraServices)
         {
             _inventoryServices = inventoryServices;
             _sucursalServices = sucursalServices;
             _productServices = productServices;
+            _bitacoraServices = bitacoraServices;
         }
 
         public async Task<IActionResult> Index()
@@ -56,6 +58,14 @@ namespace BaseWeb.Controllers.Operacion
                 var response = await _inventoryServices.Create(inventario);
                 if (response.Success) // Validamos sí el inventario se creó.
                 {
+                    Bitacora bitacora = new Bitacora();
+
+                    bitacora.Accion = "Crear";
+                    bitacora.NuevoValor = inventario.ToString();
+                    bitacora.Objeto = "Inventario";
+                    bitacora.Responsable = HttpContext.User.Identity.Name;
+
+                    await _bitacoraServices.Create(bitacora);
                     return Json(new { success = response.Success, msj = response.Message, });
                 }
                 else
@@ -89,9 +99,18 @@ namespace BaseWeb.Controllers.Operacion
         {
             if (ModelState.IsValid)
             {
-                var response = await _inventoryServices.Edit(inventario);
+                var response = await _inventoryServices.Edit(inventario); 
+
+                Bitacora bitacora = new Bitacora();
+
+                bitacora.Accion = "Editar";
+                bitacora.Objeto = "Inventario";
+                bitacora.Responsable = HttpContext.User.Identity.Name;
+
                 if (response.Success) // Validamos sí el inventario se editó correctamente.
                 {
+                    bitacora.NuevoValor = inventario.ToString();
+                    await _bitacoraServices.Create(bitacora);
                     return Json(new { success = response.Success, msj = response.Message });
                 }
                 else
@@ -113,6 +132,14 @@ namespace BaseWeb.Controllers.Operacion
             var response = await _inventoryServices.Remove(id);
             if (response.Success) // Validamos sí la sucursal se eliminó.
             {
+                Bitacora bitacora = new Bitacora();
+
+                bitacora.Accion = "Eliminar";
+                bitacora.NuevoValor = "N/A";
+                bitacora.Objeto = "Inventario";
+                bitacora.Responsable = HttpContext.User.Identity.Name;
+
+                await _bitacoraServices.Create(bitacora);
                 return Json(new { success = response.Success, msj = response.Message });
             }
             else

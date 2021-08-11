@@ -1,7 +1,9 @@
 ﻿using BaseWeb.Models;
+using Domain.Objetos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Services.IServicios;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -14,10 +16,12 @@ namespace BaseWeb.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IBitacoraServicio _bitacoraServices;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IBitacoraServicio bitacoraServices)
         {
             _logger = logger;
+            _bitacoraServices = bitacoraServices;
         }
 
         public IActionResult Index()
@@ -35,5 +39,12 @@ namespace BaseWeb.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public async Task<IActionResult> Bitacora()
+        {
+            List<Bitacora> bitacoras = await _bitacoraServices.GetAll();
+            return View(bitacoras);
+        }
+
     }
 }

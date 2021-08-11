@@ -27,6 +27,7 @@ namespace Repository.Context
         public virtual DbSet<Sucursal> Sucursales { get; set; }
         public virtual DbSet<Producto> Productos { get; set; }
         public virtual DbSet<Inventario> Inventarios { get; set; }
+        public virtual DbSet<Bitacora> Bitacoras { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

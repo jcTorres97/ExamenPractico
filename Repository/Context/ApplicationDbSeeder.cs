@@ -64,7 +64,7 @@ namespace Repository.Context
                     {
 
                         EstatusUsuario = EstatusUsuario.ACTIVO,
-                        UserName = "admin@admin.com",
+                        UserName = "Administrador",
                         Email = "admin@admin.com",
                         EmailConfirmed = true,
                         RowVersion = DateTime.Now

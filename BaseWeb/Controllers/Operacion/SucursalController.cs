@@ -12,11 +12,13 @@ namespace BaseWeb.Controllers.Operacion
     {
         private readonly ISucursalServicio _sucursalServices;
         private readonly IInventarioServicio _inventoryServices;
+        private readonly IBitacoraServicio _bitacoraServices;
 
-        public SucursalController(ISucursalServicio sucursalServices, IInventarioServicio inventoryServices)
+        public SucursalController(ISucursalServicio sucursalServices, IInventarioServicio inventoryServices, IBitacoraServicio bitacoraServices)
         {
             _sucursalServices = sucursalServices;
             _inventoryServices = inventoryServices;
+            _bitacoraServices = bitacoraServices;
         }
 
         public async Task<IActionResult> Index()
@@ -51,6 +53,14 @@ namespace BaseWeb.Controllers.Operacion
                 var response = await _sucursalServices.Create(sucursal);
                 if (response.Success) // Validamos sí la sucursal se creó.
                 {
+                    Bitacora bitacora = new Bitacora();
+
+                    bitacora.Accion = "Crear";
+                    bitacora.NuevoValor = sucursal.Name;
+                    bitacora.Objeto = "Sucursal";
+                    bitacora.Responsable = HttpContext.User.Identity.Name;
+
+                    await _bitacoraServices.Create(bitacora);
                     return Json(new { success = response.Success, msj = response.Message, });
                 }
                 else
@@ -83,8 +93,17 @@ namespace BaseWeb.Controllers.Operacion
             if (ModelState.IsValid)
             {
                 var response = await _sucursalServices.Edit(sucursal);
+
+                Bitacora bitacora = new Bitacora();
+
+                bitacora.Accion = "Editar";
+                bitacora.Objeto = "Sucursal";
+                bitacora.Responsable = HttpContext.User.Identity.Name;
+
                 if (response.Success) // Validamos sí la sucursal se editó correctamente.
                 {
+                    bitacora.NuevoValor = sucursal.Name;
+                    await _bitacoraServices.Create(bitacora);
                     return Json(new { success = response.Success, msj = response.Message });
                 }
                 else
@@ -106,6 +125,14 @@ namespace BaseWeb.Controllers.Operacion
             var response = await _sucursalServices.Remove(id);
             if (response.Success) // Validamos sí la sucursal se eliminó.
             {
+                Bitacora bitacora = new Bitacora();
+
+                bitacora.Accion = "Eliminar";
+                bitacora.NuevoValor = "N/A";
+                bitacora.Objeto = "Sucursal";
+                bitacora.Responsable = HttpContext.User.Identity.Name;
+
+                await _bitacoraServices.Create(bitacora);
                 return Json(new { success = response.Success, msj = response.Message });
             }
             else
